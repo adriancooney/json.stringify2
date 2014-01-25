@@ -5,10 +5,14 @@
  * @return {String}        JSON encoded string.
  */
 JSON.stringify2 = function(object) {
+	// Return null without quotes
+	if(object === null) return null;
+
+
 	// Stringify arrays by looping over their values
 	if(Array.isArray(object)) {
 		var output = "[";
-		for(var i = 0, cache = object.length; i < cache; i++) output += (i ? COMMA : "") + JSON.stringify2(object[i]);
+		for(var i = 0, cache = object.length; i < cache; i++) output += (i ? "," : "") + JSON.stringify2(object[i]);
 		return output + "]";
 	}
 
@@ -16,16 +20,13 @@ JSON.stringify2 = function(object) {
 	if(object !== null && typeof object === "object") {
 		var output = "{", i = 0;
 		for(var key in object) {
-			var val = object[key];
-			if(val !== undefined) {
-				output += (i++ ? "," : "") + "\"" + key + "\":" + JSON.stringify2(val);
+			var value = object[key];
+			if(value !== undefined) {
+				output += (i++ ? "," : "") + "\"" + key + "\":" + JSON.stringify2(value);
 			}
 		}
 		return output + "}";
 	}
-
-	// Return null without quotes
-	if(object === null) return null;
 
 	// Return boolean and numbers without quotes
 	var type = typeof object;
