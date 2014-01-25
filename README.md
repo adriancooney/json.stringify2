@@ -15,7 +15,7 @@ stringify2({a: 1});
 
 //Or
 JSON.stringify2({a: 1});
-```js
+```
 
 ### `JSON.stringify2( object )`
 Convert a Javascript object to a JSON string, with zero spacing rules (i.e. completed compacted.).
