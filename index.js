@@ -17,7 +17,7 @@ JSON.stringify2 = function(object) {
 		var output = "{", i = 0;
 		for(var key in object) {
 			var val = object[key];
-			if(val !== undefined && object.hasOwnProperty(key)) {
+			if(val !== undefined) {
 				output += (i++ ? "," : "") + "\"" + key + "\":" + JSON.stringify2(val);
 			}
 		}
