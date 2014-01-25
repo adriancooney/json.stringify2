@@ -16,7 +16,7 @@ JSON.stringify2 = function(object) {
 		for(var key in object) {
 			var val = object[key];
 			if(val !== undefined && object.hasOwnProperty(key)) {
-				output += (i++ ? COMMA : "") + toStringLiteral(key) + COLON + JSON.stringify2(val);
+				output += (i++ ? COMMA : "") + QUOTE + key + QUOTE + COLON + JSON.stringify2(val);
 			}
 		}
 		return output + OBJECT_RIGHT;
