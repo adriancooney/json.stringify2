@@ -1,0 +1,28 @@
+{
+  "name": "json.stringify2",
+  "version": "0.1.1",
+  "description": "A 112% faster stripped down implementation of JSON.stringify.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "benchmark": "./node_modules/benchmartian/bin/benchmartian ./benchmark/json.stringify2.js"
+  },
+  "keywords": [
+    "faster",
+    "json",
+    "stringify",
+    "stringify2"
+  ],
+  "repository":{ 
+    "type" : "git",
+    "url" : "https://github.com/dunxrion/json.stringify2.git"
+  },
+  "author": "Adrian Cooney",
+  "license": "MIT",
+  "devDependencies": {
+    "benchmartian": "0.0.2"
+  }
+}
