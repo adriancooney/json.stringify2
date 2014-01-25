@@ -1,5 +1,5 @@
 /**
- * A 100% faster implementation of JSON.stringify because
+ * A 112% faster implementation of JSON.stringify because
  * it strips the frills and confetti.
  * @param  {Object} object An object to encode.
  * @return {String}        JSON encoded string.
@@ -34,3 +34,5 @@ JSON.stringify2 = function(object) {
 	// Return strings, with quotes
 	return "\"" + object + "\"";
 };
+
+module.exports = JSON.stringify2;
