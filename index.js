@@ -20,11 +20,10 @@ JSON.stringify2 = function(object) {
 			}
 		}
 		return output + OBJECT_RIGHT;
-	} else return toStringLiteral(object);
+	} else if(object === null) return null;
+	else {
+		var type = typeof object;
+		if(type === "number" || type === "boolean") return object;
+		else return QUOTE + object + QUOTE;
+	}
 };
-
-function toStringLiteral(value) {
-	var type = typeof value;
-	if(value === null || type === "number" || type === "boolean") return value
-	return QUOTE + value + QUOTE;
-}
