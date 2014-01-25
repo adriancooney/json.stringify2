@@ -21,7 +21,8 @@ describe("json.stringify2", function() {
 				}
 			}],
 			f: undefined,
-			g: null
+			g: null,
+			h: (new Date).toJSON()
 		};
 
 		var control = JSON.stringify(o);
