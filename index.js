@@ -13,7 +13,7 @@ JSON.stringify2 = function(object) {
 		return output + "]";
 	}
 
-	if(typeof object === "object" && object !== null) {
+	if(object !== null && typeof object === "object") {
 		var output = "{", i = 0;
 		for(var key in object) {
 			var val = object[key];
